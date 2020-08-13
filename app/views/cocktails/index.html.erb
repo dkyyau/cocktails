@@ -1,9 +1,15 @@
 <h1>Cocktails</h1>
 
-<ul>
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
   <% @cocktails.each do |cocktail| %>
-    <li><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
+    <div class="col p-3">
+      <%= link_to cocktail_path(cocktail) do %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cocktail.image_url %>'); object-fit: cover">
+          <%= cocktail.name %>
+        </div>
+      <% end %>
+    </div>
   <% end %>
-</ul>
+</div>
 
 <%= link_to "Add a cocktail", new_cocktail_path, class: "btn btn-outline-secondary" %>
