@@ -1,5 +1,5 @@
 <%= simple_form_for(dose) do |f| %>
   <%= f.input :description, label: 'Amount' %>
-  <%= f.association :ingredient %>
+  <%= f.association :ingredient, collection: Ingredient.order('name ASC') %>
   <%= f.button :submit, "Add ingredient", class: "btn btn-secondary" %>
 <% end %>
