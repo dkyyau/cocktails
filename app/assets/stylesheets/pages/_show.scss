@@ -1,0 +1,15 @@
+.ingredients-container {
+  width: 50%;
+  padding: 24px;
+  a {
+    color: black;
+    opacity: 0.5;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+i {
+  padding-left: 8px;
+}

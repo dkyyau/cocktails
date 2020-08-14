@@ -1,18 +1,36 @@
-<h2><%= @cocktail.name %></h2>
-
 <% if @cocktail.image.attached? %>
-  <%= cl_image_tag @cocktail.image.key, height: 300, width: 400, crop: :fill %>
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @cocktail.image.key, crop: :fill, gravity: :center %>');">
+    <div class="container">
+      <h1><%= @cocktail.name %></h1>
+    </div>
+  </div>
+<% else %>
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_path "cocktail-banner.jpg" %>');">
+    <div class="container">
+      <h1><%= @cocktail.name %></h1>
+    </div>
+  </div>
 <% end %>
 
-<% @cocktail.doses.each do |dose| %>
-  <p>
-    <%= dose.description %> <%= dose.ingredient.name %>
-    <%= link_to dose_path(dose), method: :delete, data: { confirm: "Delete?" } do %>
-        <i class="far fa-trash-alt"></i>
+<div class="container text-center">
+  <div class="d-flex justify-content-around">
+    <div class="ingredients-container">
+    <h2>Ingredients</h2>
+      <% @cocktail.doses.each do |dose| %>
+        <p>
+          <%= dose.description %> <%= dose.ingredient.name %>
+          <%= link_to dose_path(dose), method: :delete, data: { confirm: "Delete?" } do %>
+              <i class="far fa-trash-alt"></i>
+            <% end %>
+        </p>
       <% end %>
-  </p>
-<% end %>
+    </div>
 
-<%= render "dose_form", dose: [@cocktail, @dose] %>
+    <div class="form-container">
+      <h2>Add ingredient</h2>
+      <%= render "dose_form", dose: [@cocktail, @dose] %>
+    </div>
 
-<%= link_to "Back to cocktails", cocktails_path, class: "btn btn-warning" %>
+  </div>
+  <%= link_to "Back to cocktails", cocktails_path, class: "btn btn-warning" %>
+</div>

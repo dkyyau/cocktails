@@ -1,5 +1,7 @@
-<h2>New cocktail</h2>
-
-<%= render "form", cocktail: @cocktail %>
-
-<%= link_to "Cancel", cocktails_path, class: "btn btn-warning" %>
+<div class="container text-center">
+  <div class="form-container">
+    <h2>New Cocktail</h2>
+    <%= render "form", cocktail: @cocktail %>
+  </div>
+  <%= link_to "Cancel", cocktails_path, class: "btn btn-sm btn-warning" %>
+</div>
