@@ -1,7 +1,9 @@
 <div class="container text-center">
-  <div class="form-container">
-    <h2>New Cocktail</h2>
-    <%= render "form", cocktail: @cocktail %>
+  <div class="d-flex justify-content-center">
+    <div class="form-container">
+      <h2>New Cocktail</h2>
+      <%= render "form", cocktail: @cocktail %>
+    </div>
   </div>
   <%= link_to "Cancel", cocktails_path, class: "btn btn-sm btn-warning" %>
 </div>
