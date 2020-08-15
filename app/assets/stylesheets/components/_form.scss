@@ -1,10 +1,17 @@
 .form-container {
-  width: 300px;
+  width: 80%;
   padding: 24px;
   margin: 0 auto;
   text-align: center;
 }
 
 #cocktail_image {
-  margin-left: 24px;
+  width: 14rem;
+  margin: 0 auto;
+  padding-left: 12px;
+}
+
+.form-control {
+  width: 14rem;
+  margin: 0 auto;
 }

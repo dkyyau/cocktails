@@ -14,3 +14,9 @@
 i {
   padding-left: 8px;
 }
+
+@media only screen and (max-width: 600px) {
+  h1 {
+    text-align: center;
+  }
+}
